@@ -1,0 +1,12 @@
+<?php
+    exec("ipconfig/all",$info)
+
+
+    foreach($info as $data)
+	{
+  	 if(preg_match("/physical Address/i",$data)){
+              preg_replace("/\s+\./","",$data);
+
+	}
+
+?>

@@ -1,0 +1,23 @@
+$(window).scroll(function(){
+if(sessionStorage.getItem("mateen") == null)
+{
+var show = $("#counting>span:nth-of-type(2)").attr('class');
+if(show.indexOf('animated') != -1)
+{
+mateen();sessionStorage.setItem("mateen","ali");
+}
+}
+});
+
+function mateen(){
+$(document).ready(function(){
+var num = 0;
+var clear = setInterval(function(){
+num +=50;
+$("#counting>span:nth-of-type(2)").html(num+"+");
+if(num==1500){
+clearInterval(clear);
+}
+},100);
+});
+}

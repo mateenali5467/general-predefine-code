@@ -1,0 +1,13 @@
+<div class="form-group">
+		<label for="personal-lastname">Last Name</label>
+		<input type="text" name="LastName" placeholder="Last Name" id="personal-lastname" class="form-control">
+	</div>
+
+////
+
+<div class="input-group">
+					<div class="input-group-prepand">
+			<span class="input-group-text p-2"><label for="Personal-Number">Phone #:</label></span>
+		</div>
+			 <input type="number" name="FirstName" placeholder="phone Number" id="Personal-Number" class="form-control p-4" min="0">
+                </div>

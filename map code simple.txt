@@ -1,0 +1,33 @@
+google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string','States');
+        data.addColumn('number','branches');
+
+        data.addRows([
+          ['Punjab',500],
+          ['Sindh',100],
+          ]);
+
+        var options = {
+          region : 'PK',
+          resolution: 'provinces',
+          colors :['green','red'],
+          datalessRegionColor : 'black',
+          tooltip :{textStyle:{color:'black',bold:true,italic:true}},
+          legend : {textStyle:{fontSize:20,bold:true}},
+        };
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+      google.visualization.events.addListener(chart,'select',function(){
+    var index =  chart.setSelection();
+      alert(index[0].row);
+   });
+        chart.draw(data, options);
+      }

@@ -1,0 +1,13 @@
+.slick-prev:before{
+display: none;
+}
+.slick-next:before{
+display: none;
+}
+/////
+.slick-active{
+opacity: .5;
+}
+.slick-current{
+opacity: 1;
+}
